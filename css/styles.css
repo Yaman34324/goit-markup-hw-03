@@ -24,7 +24,8 @@ body{
     font-size:16px;
     line-height:1.5;
     margin:0 auto;
-    width:1440px;
+    max-width:1440px;
+    overflow-x: hidden;
 }
 h1 {
     color: rgba(255, 255, 255, 1);
@@ -69,11 +70,9 @@ h1,h2,h3,h4,h5,h6,p,ul{
 /* HEADER HEADER HEADER HEADER HEADER HEADER HEADER HEADER*/
 header{
     display: flex;
-    justify-content: space-around; 
-    padding-bottom: 24px;
-    padding-top: 24px;
-    align-items: baseline;
-    align-items: center;
+    justify-content:space-between;
+    padding:24px 156px;
+    background-color: rgba(255, 255, 255, 1);
 }
 .header_left{
     display: flex;
@@ -87,6 +86,30 @@ header{
     height:24px;
     display:flex;
     gap:40px;
+    align-items: center;
+}
+.header_container a{
+    position: relative;
+    color: #2E2F42;
+    font-weight: 500;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.header_container a:after{
+    content: '';
+    position: absolute;
+    margin-top: 10px;
+    bottom: -24px;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background-color: #404BBF;
+    border-radius: 2px;
+    opacity: 0;
+}
+.header_container a:hover::after {
+    opacity: 1;
 }
 address{
     display:flex;
@@ -95,17 +118,34 @@ address{
 }
 /* ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT ABOUT*/
 .about_stuff{
-    padding-top: 188px;
-    padding-bottom: 292px;
+    padding-top: 220px;
+    padding-bottom: 220px;
     padding-left: 472px;
     padding-right: 472px;
-    background-color: rgba(46, 47, 66, 1);
     align-items: center;
     justify-content:center;
     display:flex;
     flex-direction:column;
     justify-content: center;
     text-align: center;
+    position: relative;
+    overflow: hidden;
+    background-color: rgba(46, 47, 66, 1);
+    z-index: -2;
+    max-width:100%;
+    height:100%;
+    box-sizing: border-box;
+    background-position: center;
+}
+.about_stuff .about_img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0.3;
+    background-image: url(../images/group_people_working.jpg);
+    background-position: center;
+    background-size: cover;
+    z-index: -1;
 }
 .about_title{
 }
@@ -119,6 +159,7 @@ address{
     padding-right: 156px;
     padding-top: 120px;
     padding-bottom: 120px;
+    box-sizing: border-box;
 }
 .about_button{
     width:169px;
@@ -159,11 +200,16 @@ address{
     display:flex;
 }
 .team_member_text p{
-    padding-bottom: 32px;
+    padding-bottom: 8px;
     padding-top: 4px;
 }
 .team_member_text h3{
     padding-top: 32px;
+}
+.team_media_container{
+    display:flex;
+    justify-content: space-around;
+    padding-bottom: 32px;
 }
 /* PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO*/
 .portfolio_container{
@@ -179,11 +225,17 @@ address{
     padding-top: 120px;
     padding-bottom: 72px;
 }
-.portfolio_card{
+.portfolio_card {
     background-color: rgba(255, 255, 255, 1);
     border-color: rgba(231, 233, 252, 1);
-    border-width:1px;
+    border-width: 1px;
     border-style: solid;
+    overflow: hidden;
+}
+.portfolio_card_text:hover {
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08);
+    box-shadow: 0px 1px 1px rgba(46, 47, 66, 0.16);
+    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .portfolio_card_text p {
     padding-left: 10px;
@@ -197,16 +249,45 @@ address{
 .portfolio_card_text{
     padding-left: 16px;
 }
+.portfolio_img_container{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 300px;
+}
+.portfolio_hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(77, 90, 229, 1);
+    transform: translatey(100%);
+    transition: transform 250ms ease-in-out;
+    padding-top: 40px;
+    padding-right: 32px;
+    padding-left:32px;
+    color:rgba(244, 244, 253, 1);
+
+}
+
+.portfolio_card:hover .portfolio_hover {
+    transform: translatey(0);
+}
 /* FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER FOOTER*/
 .footer{
     background-color: rgba(46, 47, 66, 1);
     padding-left: 156px;
     padding-top: 100px;
+    display: flex;
+    gap:120px;
+    align-items: flex-start;
 }
 .footer_text{
     color: rgba(244, 244, 253, 1);
     width:264px;
     padding-bottom: 100px;
+
 }.web,
 .web:hover {
     color: rgba(77, 90, 229, 1);
@@ -242,4 +323,18 @@ address{
     width: 71px;
     height: 21px;
     font-size: 18px;
+}
+.media {
+    width:40px;
+    height: 40px;
+}
+.media{
+    margin-right:16px;
+}
+.media:last-child{
+    margin-right:0px;
+}
+.medias p{
+    color:rgba(255, 255, 255, 1);
+    padding-bottom:16px;
 }
