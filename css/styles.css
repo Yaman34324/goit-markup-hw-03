@@ -131,7 +131,7 @@ address{
     position: relative;
     overflow: hidden;
     background-color: rgba(46, 47, 66, 1);
-    z-index: -2;
+    z-index: 1;
     max-width:100%;
     height:100%;
     box-sizing: border-box;
@@ -167,6 +167,15 @@ address{
     border-radius: 4px;
     margin-top: 48px;
 }
+.about_svg {
+    border-style: solid;
+    border-width:2px;
+    border-color:hsla(235, 5%, 58%, 1);
+    border-radius: 4px;
+    padding-top:24px;
+    padding-bottom:24px;
+    background-color: rgba(244, 244, 253, 1);
+}
 /*TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM TEAM*/
 .team{
     background-color: rgba(244, 244, 253, 1);
@@ -189,9 +198,7 @@ address{
 .team_member_text{
     background-color: rgba(255, 255, 255, 1);
     border-radius: 0px 0px 4px 4px;
-    box-shadow:0px 1px 2px rgba(0, 0, 4, 0.08);
-    box-shadow:0px 1px 1px rgba(46, 47, 66, 0.16);
-    box-shadow:0px 1px 6px rgba(46, 47, 66, 0.08);
+    box-shadow:0px 1px 2px rgba(0, 0, 4, 0.08),0px 1px 1px rgba(46, 47, 66, 0.16),0px 1px 6px rgba(46, 47, 66, 0.08);
     text-align: center;
     justify-content: center;
 }
@@ -207,9 +214,22 @@ address{
     padding-top: 32px;
 }
 .team_media_container{
-    display:flex;
-    justify-content: space-around;
-    padding-bottom: 32px;
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    padding: 0 16px 32px 16px;
+}
+.team_media{
+    display: flex;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(77, 90, 229, 1);
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.team_media:hover{
+    background-color: rgba(49, 208, 170, 1);
 }
 /* PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO PORTFOLIO*/
 .portfolio_container{
@@ -232,10 +252,10 @@ address{
     border-style: solid;
     overflow: hidden;
 }
-.portfolio_card_text:hover {
-    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08);
-    box-shadow: 0px 1px 1px rgba(46, 47, 66, 0.16);
-    box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08);
+.portfolio_card:hover {
+    box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+        0px 1px 1px rgba(46, 47, 66, 0.16),
+        0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 .portfolio_card_text p {
     padding-left: 10px;
@@ -327,6 +347,11 @@ address{
 .media {
     width:40px;
     height: 40px;
+    background-color: rgba(77, 90, 229, 1);
+    border-radius: 50%;
+}
+.media:hover{
+    background-color: rgba(49, 208, 170, 1);
 }
 .media{
     margin-right:16px;
@@ -334,7 +359,7 @@ address{
 .media:last-child{
     margin-right:0px;
 }
-.medias p{
+.footer_medias p{
     color:rgba(255, 255, 255, 1);
     padding-bottom:16px;
 }
